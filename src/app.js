@@ -9,6 +9,6 @@ app.get('/', (request, response) => {
     return response.json({ok: true})
 });
 
-app.listen(process.env.APP_PORT, () => {
+app.listen(process.env.PORT, () => {
     console.log('Server up and running ');
 })
