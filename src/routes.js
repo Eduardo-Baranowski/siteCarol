@@ -4,6 +4,18 @@ const userController = require('./controllers/UserController');
 
 const routes = Router();
 
+const get = async () => {
+    return Promise.reject('Oops!').catch(err => {
+      throw new Error(err);
+    });
+  };
+  
+  get()
+    .then(console.log)
+    .catch(function(e) {
+      console.log(e);
+    });
+
 routes.get('/', async (request, response) => {
 
     //const user = await User.create({email: 'Teste', password: '123'});
@@ -22,6 +34,7 @@ routes.get('/', async (request, response) => {
 });
 
 routes.post('/criar-usuario', userController.create)
+
 
 
 module.exports = routes;
