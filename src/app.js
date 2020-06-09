@@ -18,11 +18,7 @@ nunjucks.configure(path.resolve(__dirname, 'views'), {
 });
 
 
-//app.set('views', path.resolve(__dirname, 'views/'));
-//app.engine('handlebars', handlebars({defaultLayout: 'main'}));
-//app.set('view engine', 'handlerbars');
-
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(process.env.MONGO_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   });
