@@ -21,7 +21,7 @@ routes.get('/', async (request, response) => {
     //return response.json(users);
 });
 
-routes.post('/criar-usuario', userController.create)
+routes.post('/carolbaranowski.herokuapp.com/criar-usuario', userController.create)
 
 
 module.exports = routes;
