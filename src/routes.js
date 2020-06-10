@@ -26,6 +26,18 @@ routes.get('/comofunciona', async (request, response) => {
 
 });
 
+routes.get('/compreasua', async (request, response) => {
+
+    return response.render('compreasua.html')
+
+});
+
+routes.get('/sobre', async (request, response) => {
+
+    return response.render('sobre.html')
+
+});
+
 routes.post('/criar-usuario', userController.create)
 
 

@@ -6,19 +6,18 @@
     <title>Site Carol</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://getbootstrap.com/docs/4.0/examples/sticky-footer-navbar/sticky-footer-navbar.css"/>
+    <style type="text/css">
+    </style>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="/home">Loteria dos Automóveis</a>
+  <a class="navbar-brand" href="/">Loteria dos Automóveis</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarCollapse">
   
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item">
-        <a class="nav-link" href="/home">Início</a>
-      </li>      
+    <ul class="navbar-nav mr-auto">     
       <li class="nav-item">
         <a class="nav-link" href="/sobre">Sobre</a>
       </li>
@@ -33,12 +32,18 @@
   </div>
       
 </nav>
+<!--
 <main role="main" class="container">
     <form action="/criar-usuario" method="POST">
         <input type="text" placeholder="email" name="email"><br />
         <input type="password" placeholder="senha" name="password"> <br />
         <button type="submit">Criar</button>
     </form>
+</main>
+-->
+<main role="main" class="container">
+  {% block conteudo %}
+  {% endblock %}
 </main>
 <footer class="footer fixed-bottom">
             <div class="container">
