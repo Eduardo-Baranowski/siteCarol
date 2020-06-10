@@ -1,7 +1,7 @@
 const {Router} = require('express');
 const User = require('./models/User');
 const userController = require('./controllers/UserController');
-
+//const multer = require('./multer');
 const routes = Router();
 
 routes.get('/', async (request, response) => {
@@ -40,6 +40,39 @@ routes.get('/sobre', async (request, response) => {
 
 routes.post('/criar-usuario', userController.create)
 
+/*
+    // ROTA PARA GET, RENDERIZAR O FORMULÁRIO
+routes.get('/nova-imagem', (req, res, next) => {
+        res.send(`
+            <html>
+                <head> 
+                    <title> Nova imagem </title>
+                </head>
+                </body>
+                    <!-- O enctype é de extrema importância! Não funciona sem! -->
+                    <form action="/nova-imagem"  method="POST" enctype="multipart/form-data">
+                        <!-- O NAME do input deve ser exatamente igual ao especificado na rota -->
+                        <input type="file" name="image">
+                        <button type="submit"> Enviar </button>
+                    </form>
+                </body>
+            </html>
+        `);
+    });
 
+    // ROTA PARA POST, TRATAR O FORMULÁRIO
+    // APLICAMOS O NOSSO MIDDLEWARE IMPORTADO PASSANDO O NAME DO INPUT A SER TRATADO
+    routes.post('/nova-imagem', multer.single('image'), (req, res, next) => {
 
+        // Se houve sucesso no armazenamento
+        if (req.file) {
+            // Vamos imprimir na tela o objeto com os dados do arquivo armazenado
+            return res.send(req.file);
+        }
+
+        // Se o objeto req.file for undefined, ou seja, não houve sucesso, vamos imprimir um erro!
+        return res.send('Houve erro no upload!');
+
+    });
+*/
 module.exports = routes;
