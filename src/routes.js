@@ -20,6 +20,11 @@ routes.get('/', async (request, response) => {
 
     //return response.json(users);
 });
+routes.get('/comofunciona', async (request, response) => {
+
+    return response.render('comofunciona.html')
+
+});
 
 routes.post('/criar-usuario', userController.create)
 
