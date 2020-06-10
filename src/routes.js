@@ -15,7 +15,7 @@ routes.get('/', async (request, response) => {
     //const users = await User.find();
 
 
-    return response.render('index.html')
+    return response.render('home.html')
 
 
     //return response.json(users);
