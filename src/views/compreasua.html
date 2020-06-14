@@ -5,6 +5,20 @@
     .solicitado {
       border-style: hidden;
     }
+  .grid-container {
+    display: inline-grid;
+    grid-template-columns: auto auto auto;
+    background-color: #2196F3;
+    padding: 10px;
+  }
+
+  .grid-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    font-size: 30px;
+    text-align: center;
+  }    
   </style>
   <script>
     const button = document.querySelector('button');
@@ -104,10 +118,24 @@
 <main role="main" class="container" align="center">
 <br>
 <h1><span>Pagamento</span></h1>
-<h2 style="color:brown">Banco Inter</h2>
-<h2 style="color:brown">Agência: 0001</h2>
-<h2 style="color:brown">Conta: 1924306-5</h2>
-<h2 style="color:brown">Favorecido: Caroline Miranda Baranowski</h2>
+
+<div class="grid-container">
+  <div class="grid-item">
+    <h2 style="color:brown">Banco Inter</h2>
+    <h2 style="color:brown">Agência: 0001</h2>
+    <h2 style="color:brown">Conta: 1924306-5</h2>
+    <h2 style="color:brown">Favorecido: Caroline Miranda Baranowski</h2>
+  </div>
+  <div class="grid-item">2
+    <h2 style="color:brown">Banco Santander</h2>
+    <h2 style="color:brown">Agência: 3731</h2>
+    <h2 style="color:brown">Conta: 01041897-8</h2>
+    <h2 style="color:brown">Favorecido: Caroline Baranowski</h2>
+  </div>
+</div>
+<br>
+<br>
+
 <a class="btn btn-lg btn-primary" href="compreasua" role="button">Comprar &raquo;</a>
 <br>
 <br>
