@@ -1,8 +1,19 @@
 {% extends 'index.html' %}
 
 {% block conteudo %}
+  <style>
+    .solicitado {
+      border-style: hidden;
+    }
+  </style>
+  <script>
+    const button = document.querySelector('button');
 
-    <br>
+    button.addEventListener('click', (e) => {
+      button.classList.toggle('solicitado');
+    })
+  </script>
+  <br>
   <br>
   <main role="main" class="container"> 
       <h1 align="center">Cartelas Disponíveis!</h1>    
@@ -10,72 +21,72 @@
         <tbody>          
                 <tr>                
                 {% for i in range(15) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr> 
                 <tr>
                 {% for i in range(15, 30) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>
                 <tr>
                 {% for i in range(30, 45) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>
                 <tr>
                 {% for i in range(45, 60) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                   
                 <tr>
                 {% for i in range(60, 75) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                             
                 <tr>
                 {% for i in range(75, 90) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                   
                 <tr>
                 {% for i in range(90, 105) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}                
                 </tr>     
                 <tr>
                 {% for i in range(105, 120) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                            
                 <tr>
                 {% for i in range(120, 135) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                     
                 <tr>
                 {% for i in range(135, 150) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                     
                 <tr>
                 {% for i in range(150, 165) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                     
                 <tr>
                 {% for i in range(165, 180) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                     
                 <tr>
                 {% for i in range(180, 195) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                     
                 <tr>
                 {% for i in range(195, 210) %}
-                <td align="center"> <button style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
+                <td align="center"> <button class= "solicitado" style="height:36px;width:47px" type="submit">{{i+1}}</button> </td>
                 {%endfor%}
                 </tr>                                                                                                             
         </tbody>
