@@ -61,7 +61,7 @@ module.exports = {
     console.log(user);
 
     //return response.render("createUser.html", { user: user });
-    return response.render("home.html");
+    return response.render("cadastroSucesso.html");
   },
   /*
     async show() {
