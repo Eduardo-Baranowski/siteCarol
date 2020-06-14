@@ -13,19 +13,17 @@ module.exports = {
 
     return response.render("createUser.html", { user: user });
   },
-
   /*
     async show() {
-         buscar todos os button
         const buttons = Buttons.findAll();
         
          {
-          number_id: number,
-         required: boolean
+          number_id: number;
+          requarid: boolean;
          }
          
-        return render('index.html', {buttons=buttons})
+        return render('compreasua.html', {buttons=buttons})
 
     }
-    */
+  */
 };
