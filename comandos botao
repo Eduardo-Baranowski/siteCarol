@@ -1,0 +1,23 @@
+html:
+<button>Teste</button>
+css:
+.solicitado {
+  border-style: hidden;
+}
+
+
+
+{
+  number_id: 1,
+  required: true
+},
+{
+  number_id: 2,
+  required: false
+},
+js:
+const button = document.querySelector('button');
+
+button.addEventListener('click', (e) => {
+  button.classList.toggle('solicitado');
+})
