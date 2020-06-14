@@ -11,6 +11,7 @@ const routes = require('./routes');
 const app = express();
 app.use(express.json({}));
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use('/static', express.static(path.resolve(__dirname, '..', 'static')));
 app.use(routes);
 
 nunjucks.configure(path.resolve(__dirname, 'views'), {
