@@ -1,0 +1,79 @@
+{% extends 'index.html' %}
+{% block conteudo %}
+    <style>
+    label, textarea {
+        font-size: .8rem;
+        letter-spacing: 1px;
+    }
+    textarea {
+        padding: 10px;
+        line-height: 1.5;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 1px #999;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    </style>
+    <main role="main" class="jumbotron">
+    <h1>Dados cadastrais</h1>
+    <h5>Preencha o formulário com os seus dados para o cadastro. Campos com * são obrigatórios!</h5>
+    <h2>Dados Pessoais</h2>
+    <form action="/criar-usuario" method="post">
+  
+    <label>Nome Completo*</label>
+    <input name="nome" type="text" required>
+    <br><br>
+    <label>Data de Nascimento *</label>
+    <input name="dataNascimento" type="date" required>
+    <br><br>    
+    <label>Natural de *</label>
+    <input name="naturalidade" type="text" placeholder="Ex: Curitiba - PR" required>
+    <br><br>        
+    <label>CPF *</label>
+    <input name="cpf" type="text" required>
+    <br><br>            
+    <h2>Contatos</h2>         
+    <label>Email *</label>
+    <input name="email" type="text" required>
+    <br><br>  
+    <label>Celular</label>
+    <input name="celular" type="text">
+    <br><br>      
+    <label>Telefone Residencial</label>
+    <input name="residencial" type="text">  
+    <br><br>      
+    <h2>Residencial</h2>
+    <label>CEP</label>
+    <input name="cep" type="text">
+    <br><br>        
+    <label>Estado *</label>
+    <input name="estado" type="text" required>
+    <br><br>       
+    <label>Cidade *</label>
+    <input name="cidade" type="text" required>
+    <br><br>       
+    <label>Bairro</label>
+    <input name="bairro" type="text">
+    <br><br>          
+    <label>Rua *</label>
+    <input name="rua" type="text" required>
+    <br><br>    
+    <label>Número *</label>
+    <input name="numero" type="text" required>
+    <br><br>           
+    <label>Complemento *</label>
+    <input name="complemento" type="text" required>
+    <br><br>    
+    <h2>Números do sorteio</h2>
+    <label>Escolhidos *</label>
+    <input name="escolhidos" type="Number" required>
+    <br><br>    
+    <h6>* Os dados coletados aqui serão enviados para a base de dados uníca e exclusivamente para realizar o sorteio.
+** Não informe senhas pelos formulários!</h6>             
+    <button type="submit">Enviar formulário</button>
+</main>
+{% endblock %}

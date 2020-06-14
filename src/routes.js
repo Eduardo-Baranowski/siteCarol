@@ -1,44 +1,39 @@
-const {Router} = require('express');
-const User = require('./models/User');
-const userController = require('./controllers/UserController');
+const { Router } = require("express");
+const User = require("./models/User");
+const userController = require("./controllers/UserController");
 //const multer = require('./multer');
 const routes = Router();
 
-routes.get('/', async (request, response) => {
+routes.get("/", async (request, response) => {
+  //const user = await User.create({email: 'Teste', password: '123'});
 
-    //const user = await User.create({email: 'Teste', password: '123'});
+  //const user = await User.findOne({email: 'Teste'});
+  //user = {email: 'Teste', password: '123'}
 
-    //const user = await User.findOne({email: 'Teste'});
-    //user = {email: 'Teste', password: '123'}
+  //encontrar todos os usuarios
+  //const users = await User.find();
 
-    //encontrar todos os usuarios
-    //const users = await User.find();
+  return response.render("home.html");
 
-
-    return response.render('home.html')
-
-
-    //return response.json(users);
+  //return response.json(users);
 });
-routes.get('/comofunciona', async (request, response) => {
-
-    return response.render('comofunciona.html')
-
+routes.get("/comofunciona", async (request, response) => {
+  return response.render("comofunciona.html");
 });
 
-routes.get('/compreasua', async (request, response) => {
-
-    return response.render('compreasua.html')
-
+routes.get("/compreasua", async (request, response) => {
+  return response.render("compreasua.html");
 });
 
-routes.get('/sobre', async (request, response) => {
-
-    return response.render('sobre.html')
-
+routes.get("/sobre", async (request, response) => {
+  return response.render("sobre.html");
 });
 
-routes.post('/criar-usuario', userController.create)
+routes.get("/cadastro", async (request, response) => {
+  return response.render("cadastroParaCompra.html");
+});
+
+routes.post("/criar-usuario", userController.create);
 
 /*
     // ROTA PARA GET, RENDERIZAR O FORMULÁRIO
