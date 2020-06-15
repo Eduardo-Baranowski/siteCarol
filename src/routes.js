@@ -62,7 +62,7 @@ routes.post(
       .sendMail({
         from:
           "Comprovante Leilão de Automóveis <eduardobaranowskiteste@gmail.com>",
-        to: "eduardobaranowski@gmail.com",
+        to: "caroline.baranowski@autorizadoademilar.com.br",
         subject: "Dados de Pagamento Loteria de Automóveis!",
         html:
           "emai: " +
