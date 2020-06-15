@@ -1,8 +1,12 @@
 const { Router } = require("express");
 const User = require("./models/User");
 const userController = require("./controllers/UserController");
-//const multer = require('./multer');
+const Comprovante = require("./models/Comprovante");
+const comprovanteController = require("./controllers/ComprovanteController");
 const routes = Router();
+const multer = require("multer");
+const multerConfig = require("./config/multer");
+const nodemailer = require("nodemailer");
 
 routes.get("/", async (request, response) => {
   //const user = await User.create({email: 'Teste', password: '123'});
@@ -33,41 +37,60 @@ routes.get("/cadastro", async (request, response) => {
   return response.render("cadastroParaCompra.html");
 });
 
+routes.get("/comprovante", async (request, response) => {
+  return response.render("comprovante.html");
+});
+
 routes.post("/criar-usuario", userController.create);
 
-/*
-    // ROTA PARA GET, RENDERIZAR O FORMULÁRIO
-routes.get('/nova-imagem', (req, res, next) => {
-        res.send(`
-            <html>
-                <head> 
-                    <title> Nova imagem </title>
-                </head>
-                </body>
-                    <!-- O enctype é de extrema importância! Não funciona sem! -->
-                    <form action="/nova-imagem"  method="POST" enctype="multipart/form-data">
-                        <!-- O NAME do input deve ser exatamente igual ao especificado na rota -->
-                        <input type="file" name="image">
-                        <button type="submit"> Enviar </button>
-                    </form>
-                </body>
-            </html>
-        `);
+routes.post(
+  "/criar-comprovante",
+  multer(multerConfig).single("file"),
+  function (req, res, next) {
+    const nomeImg = req.file.originalname;
+    let transporter = nodemailer.createTransport({
+      host: "smtp.gmail.com",
+      port: 587,
+      secure: false,
+      auth: {
+        user: "eduardobaranowskiteste@gmail.com",
+        pass: "12345678br",
+      },
     });
 
-    // ROTA PARA POST, TRATAR O FORMULÁRIO
-    // APLICAMOS O NOSSO MIDDLEWARE IMPORTADO PASSANDO O NAME DO INPUT A SER TRATADO
-    routes.post('/nova-imagem', multer.single('image'), (req, res, next) => {
+    transporter
+      .sendMail({
+        from:
+          "Comprovante Leilão de Automóveis <eduardobaranowskiteste@gmail.com>",
+        to: "eduardobaranowski@gmail.com",
+        subject: "Dados de Pagamento Loteria de Automóveis!",
+        html:
+          "emai: " +
+          req.body.email +
+          "<br>" +
+          "nome: " +
+          req.body.nome +
+          "<br>" +
+          "Escolhidos: " +
+          req.body.escolhidos +
+          "<br>",
+        attachments: [
+          {
+            // Basta incluir esta chave e listar os anexos
+            // O nome que aparecerá nos anexos
+            filename: nomeImg,
+            path: "./tmp/uploads/" + nomeImg,
+          },
+        ],
+      })
+      .then((message) => {
+        console.log(message);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+    res.render("comprovanteSucesso.html");
+  }
+);
 
-        // Se houve sucesso no armazenamento
-        if (req.file) {
-            // Vamos imprimir na tela o objeto com os dados do arquivo armazenado
-            return res.send(req.file);
-        }
-
-        // Se o objeto req.file for undefined, ou seja, não houve sucesso, vamos imprimir um erro!
-        return res.send('Houve erro no upload!');
-
-    });
-*/
 module.exports = routes;

@@ -1,0 +1,46 @@
+{% extends 'index.html' %}
+{% block conteudo %}
+    <style>
+    label, textarea {
+        font-size: .8rem;
+        letter-spacing: 1px;
+    }
+    textarea {
+        padding: 10px;
+        line-height: 1.5;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        box-shadow: 1px 1px 1px #999;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 10px;
+    }
+    </style>   
+    <main role="main" class="jumbotron">
+    <h1>Dados</h1>
+    <h5>Preencha o formulário com os seus necessários e Comprovante de pagamento. Campos com * são obrigatórios!</h5>
+    <h2>Dados Pessoais</h2>
+    <form action="/criar-comprovante" method="post" enctype="multipart/form-data">
+  
+    <label>Nome Completo</label>
+    <input name="nome" type="text">
+    <br><br>            
+    <h2>Contatos</h2>         
+    <label>Email *</label>
+    <input name="email" type="text" required>
+    <br><br>   
+    <h2>Números do sorteio</h2>
+    <label>Escolhidos </label>
+    <input name="escolhidos" type="Number">
+    <br><br>    
+    <label>Comprovante *</label>
+    <input type="file" name="file" required>
+    <br><br>    
+    <h6>* Os dados coletados aqui serão enviados para a base de dados uníca e exclusivamente para realizar o sorteio.
+** Não informe senhas pelos formulários!</h6>             
+    
+    <button type="submit" value="enviar" >Enviar Comprovante</button>
+</main>
+{% endblock %}

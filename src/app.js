@@ -3,7 +3,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const nunjucks = require("nunjucks");
 const bodyParser = require("body-parser");
-//const handlebars = require('express-handlebars');
+const morgan = require("morgan");
 const path = require("path");
 const routes = require("./routes");
 
@@ -13,6 +13,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/static", express.static(path.resolve(__dirname, "..", "static")));
 app.use("/js", express.static("js"));
 app.use(routes);
+app.use(morgan("dev"));
 
 nunjucks.configure(path.resolve(__dirname, "views"), {
   autoescape: true,
