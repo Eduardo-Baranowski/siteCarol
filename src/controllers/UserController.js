@@ -63,17 +63,4 @@ module.exports = {
     //return response.render("createUser.html", { user: user });
     return response.render("cadastroSucesso.html");
   },
-  /*
-    async show() {
-        const buttons = Buttons.findAll();
-        
-         {
-          number_id: number;
-          requarid: boolean;
-         }
-         
-        return render('compreasua.html', {buttons=buttons})
-
-    }
-  */
 };

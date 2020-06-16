@@ -1,8 +1,10 @@
 const { Router } = require("express");
 const User = require("./models/User");
+const Cartela = require("./models/Cartela");
 const userController = require("./controllers/UserController");
 const Comprovante = require("./models/Comprovante");
 const comprovanteController = require("./controllers/ComprovanteController");
+const cartelaController = require("./controllers/CartelaController");
 const routes = Router();
 const multer = require("multer");
 const multerConfig = require("./config/multer");
@@ -42,6 +44,17 @@ routes.get("/comprovante", async (request, response) => {
 });
 
 routes.post("/criar-usuario", userController.create);
+
+routes.post("/criar-usuario", function (req, res, next) {
+  console.log(req.body.escolhidos);
+  res.render("comprovanteSucesso.html");
+});
+
+routes.get("/cartelas", async (request, response) => {
+  const cartelas = await Cartela.find();
+
+  return response.json(cartelas);
+});
 
 routes.post(
   "/criar-comprovante",
