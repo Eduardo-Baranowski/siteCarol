@@ -7,11 +7,13 @@ module.exports = {
 
     // {email: '...', password: '...'}
 
-    const cartela = await Cartela.find(idCartela.equals(req.body.escolhidos));
-    const cartela = await cartela.update({
-      idCartela: escolhidos,
-      ativo: false,
-    });
+    //
+    //const cartela = await Cartela.find(idCartela.equals(req.body.escolhidos));
+    //const cartela = await cartela.update({
+    //idCartela: escolhidos,
+    //ativo: false,
+    //});
+
     console.log(cartela);
     //return response.json(cartelas);
 
